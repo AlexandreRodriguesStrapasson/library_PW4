@@ -1,12 +1,22 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom'; // Adicione useLocation aqui
 import Navegador from '../components/navagador';
 
-function FormBook() {
+function UpdateBook() {
+  const navigate = useNavigate();
+  const location = useLocation(); // Use useLocation para acessar a propriedade state
   const [bookData, setBookData] = useState({
     id: '',
     name: '',
     author: '',
   });
+
+  useEffect(() => {
+    // Preencher os campos com os dados do livro ao iniciar o componente
+    if (location.state && location.state.bookData) {
+      setBookData(location.state.bookData);
+    }
+  }, [location.state]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +31,7 @@ function FormBook() {
 
     try {
       const response = await fetch(`http://localhost:3500/books/${bookData.id}`, {
-        method: 'PUT', // Use PUT para atualizar com o ID fornecido
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -33,12 +43,8 @@ function FormBook() {
 
       if (response.ok) {
         console.log('Livro cadastrado/atualizado com sucesso!');
-        // Limpar os campos de input após o cadastro/atualização
-        setBookData({
-          id: '',
-          name: '',
-          author: '',
-        });
+        // Redirecionar de volta para a lista de livros após o cadastro/atualização
+        navigate('/Livros');
       } else {
         console.error('Erro ao cadastrar/atualizar livro.');
       }
@@ -46,8 +52,6 @@ function FormBook() {
       console.error('Erro ao conectar com o servidor:', error);
     }
   };
-
-  
 
   return (
     <div>
@@ -61,6 +65,7 @@ function FormBook() {
             name="id"
             value={bookData.id}
             onChange={handleInputChange}
+            readOnly // O ID não deve ser alterado
           />
         </label>
 
@@ -90,10 +95,10 @@ function FormBook() {
 
         <br />
 
-        <button type="submit">Cadastrar/Atualizar</button>
+        <button type="submit">Atualizar</button>
       </form>
     </div>
   );
 }
 
-export default FormBook;
+export default UpdateBook;
