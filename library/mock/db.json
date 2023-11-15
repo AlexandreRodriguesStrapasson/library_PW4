@@ -4,16 +4,6 @@
       "id": "1",
       "name": "Harry Potter",
       "author": "J.K. Rowling"
-    },
-    {
-      "name": "Drácula",
-      "author": "Bran Stolker",
-      "id": "12"
-    },
-    {
-      "id": "123",
-      "name": "Senhor dos Anéis",
-      "author": "T"
     }
   ]
 }
