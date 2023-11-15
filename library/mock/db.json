@@ -1,7 +1,19 @@
 {
-    "books": [
-        {"id": 1, 
-        "name": "Harry Potter", 
-        "author": "J.K. Rowling"}
-    ]
+  "books": [
+    {
+      "id": "1",
+      "name": "Harry Potter",
+      "author": "J.K. Rowling"
+    },
+    {
+      "id": "12",
+      "name": "Dracula",
+      "author": "Bran Stolker"
+    },
+    {
+      "id": "123",
+      "name": "Senhor dos Anéis",
+      "author": "T"
+    }
+  ]
 }

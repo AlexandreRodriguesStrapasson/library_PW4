@@ -4,7 +4,8 @@ function Home(){
     return(
         <div>
             <Navegador/>
-            <p>Página Home</p>
+            <h1>Home Page</h1>
+            <p>Essa página vai ser usada para um apresentação do site</p>
         </div>
     )
 }
