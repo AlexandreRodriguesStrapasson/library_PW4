@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navegador from '../components/navagador';
-import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
+import { AiFillEdit, AiFillDelete, AiOutlineFieldTime } from 'react-icons/ai';
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -38,7 +38,6 @@ const Books = () => {
 
       if (response.ok) {
         console.log('Livro excluído com sucesso!');
-        // Atualizar a lista de livros após a exclusão
         const updatedBooks = books.filter((book) => book.id !== bookId);
         setBooks(updatedBooks);
       } else {
@@ -47,6 +46,10 @@ const Books = () => {
     } catch (error) {
       console.error('Erro ao conectar com o servidor:', error);
     }
+  };
+
+  const handleEmprestimoClick = (bookId) => {
+    navigate('/Emprestimo', { state: { bookId } });
   };
 
   return (
@@ -64,8 +67,10 @@ const Books = () => {
             <br />
             <strong>ID: </strong>
             {book.id}
+            <br />
             <AiFillEdit onClick={() => handleEditClick(book.id)} />
             <AiFillDelete onClick={() => handleDeleteClick(book.id)} />
+            <AiOutlineFieldTime onClick={() => handleEmprestimoClick(book.id)} />
           </li>
         ))}
       </ul>

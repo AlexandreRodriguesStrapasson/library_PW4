@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Navegador from "../components/navagador";
 
 function Emprestimo() {
-  const [dataRetirada, setDataRetirada] = useState('');
-  const [dataDevolucao, setDataDevolucao] = useState('');
+  const [dataRetirada, setDataRetirada] = useState("");
+  const [dataDevolucao, setDataDevolucao] = useState("");
+  const [atrasado, setAtrasado] = useState(null);
 
   function handleDataRetiradaChange(event) {
     setDataRetirada(event.target.value);
@@ -13,17 +14,15 @@ function Emprestimo() {
     setDataDevolucao(event.target.value);
   }
 
-  function calculate() {
+  function calculateAtraso() {
     const dataRetiradaObj = new Date(dataRetirada);
     const dataDevolucaoObj = new Date(dataDevolucao);
 
-    const diffEmDias = Math.floor((dataDevolucaoObj - dataRetiradaObj) / (1000 * 60 * 60 * 24));
+    const diffEmDias = Math.floor(
+      (dataDevolucaoObj - dataRetiradaObj) / (1000 * 60 * 60 * 24)
+    );
 
-    if (diffEmDias > 30) {
-      console.log("Empréstimo atrasado");
-    } else {
-      console.log("Empréstimo dentro do prazo");
-    }
+    setAtrasado(diffEmDias > 30);
   }
 
   return (
@@ -32,22 +31,38 @@ function Emprestimo() {
       <form>
         <label>
           Data de retirada
-          <input type="date" value={dataRetirada} onChange={handleDataRetiradaChange} />
+          <input
+            type="date"
+            value={dataRetirada}
+            onChange={handleDataRetiradaChange}
+          />
         </label>
 
         <br />
 
         <label>
           Data de devolução
-          <input type="date" value={dataDevolucao} onChange={handleDataDevolucaoChange} />
+          <input
+            type="date"
+            value={dataDevolucao}
+            onChange={handleDataDevolucaoChange}
+          />
         </label>
 
         <br />
 
-        <button type="button" onClick={calculate}>
-          Conferir Emprestimo
+        <button type="button" onClick={calculateAtraso}>
+          Conferir Empréstimo
         </button>
       </form>
+
+      {atrasado !== null && (
+        <p>
+          {atrasado
+            ? "O empréstimo está atrasado."
+            : "O empréstimo está dentro do prazo."}
+        </p>
+      )}
     </div>
   );
 }
