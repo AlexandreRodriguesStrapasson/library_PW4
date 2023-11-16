@@ -5,7 +5,10 @@ function FormBook() {
     id: '',
     name: '',
     author: '',
-    dataRetirada: '', // Adiciona a data de retirada ao estado
+    dataRetirada: '',
+    clienteNome: '', // Novo campo: Nome do Cliente
+    telefone: '', // Novo campo: Telefone
+    valorEmprestimo: '', // Novo campo: Valor do Empréstimo
   });
 
   const handleInputChange = (e) => {
@@ -29,17 +32,24 @@ function FormBook() {
           id: bookData.id,
           name: bookData.name,
           author: bookData.author,
-          dataRetirada: bookData.dataRetirada, // Inclui a data de retirada na requisição
+          dataRetirada: bookData.dataRetirada,
+          clienteNome: bookData.clienteNome,
+          telefone: bookData.telefone,
+          valorEmprestimo: bookData.valorEmprestimo,
         }),
       });
 
       if (response.ok) {
         console.log('Livro cadastrado com sucesso!');
+        console.log('Livro cadastrado com sucesso!');
         setBookData({
           id: '',
           name: '',
           author: '',
-          dataRetirada: '', // Limpa a data de retirada após o cadastro
+          dataRetirada: '',
+          clienteNome: '',
+          telefone: '',
+          valorEmprestimo: '',
         });
       } else {
         console.error('Erro ao cadastrar livro.');
@@ -94,6 +104,42 @@ function FormBook() {
             type="date"
             name="dataRetirada"
             value={bookData.dataRetirada}
+            onChange={handleInputChange}
+          />
+        </label>
+
+        <br />
+
+        <label>
+          Nome do Cliente
+          <input
+            type="text"
+            name="clienteNome"
+            value={bookData.clienteNome}
+            onChange={handleInputChange}
+          />
+        </label>
+
+        <br />
+
+        <label>
+          Telefone
+          <input
+            type="text"
+            name="telefone"
+            value={bookData.telefone}
+            onChange={handleInputChange}
+          />
+        </label>
+
+        <br />
+
+        <label>
+          Valor do Empréstimo
+          <input
+            type="text"
+            name="valorEmprestimo"
+            value={bookData.valorEmprestimo}
             onChange={handleInputChange}
           />
         </label>
