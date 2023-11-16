@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navegador from '../components/navagador';
+import Browser from '../components/browser';
 import { AiFillEdit, AiFillDelete, AiOutlineFieldTime } from 'react-icons/ai';
 
 const Books = () => {
@@ -66,7 +66,7 @@ const Books = () => {
 
   return (
     <div>
-      <Navegador />
+      <Browser />
       <h2>Lista de livros emprestados</h2>
       <ul>
         {books.map((book) => (

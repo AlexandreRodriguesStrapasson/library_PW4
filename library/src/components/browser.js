@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Navegador(){
+function Browser(){
     const navigate = useNavigate();
     const goToHome = () => {
         navigate("/");
@@ -21,4 +21,4 @@ function Navegador(){
     )
 }
 
-export default Navegador;
+export default Browser;

@@ -1,11 +1,11 @@
 
-import Navegador from '../components/navagador';
+import Browser from '../components/browser';
 import FormBook from '../components/formBook';
 
 function InputBook() {
   return (
     <div>
-      <Navegador />
+      <Browser />
       <FormBook/>
     </div>
   );

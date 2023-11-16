@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';  
-import Navegador from "../components/navagador";
+import Browser from "../components/browser";
 
 function Emprestimo() {
   const location = useLocation();  
@@ -44,7 +44,7 @@ function Emprestimo() {
 
   return (
     <div>
-      <Navegador />
+      <Browser />
       <h2>Dados do Empréstimo</h2>
       <p>
         <strong>Data de Retirada:</strong> {dataRetirada}

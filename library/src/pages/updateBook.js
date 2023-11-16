@@ -1,10 +1,10 @@
-import Navegador from '../components/navagador';
+import Browser from '../components/browser';
 import FormBookUpdate from '../components/formBookUpdate';
 
 function UpdateBook() {
   return (
     <div>
-      <Navegador />
+      <Browser />
       <FormBookUpdate/>
     </div>
   );

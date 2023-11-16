@@ -6,9 +6,9 @@ function FormBook() {
     name: '',
     author: '',
     dataRetirada: '',
-    clienteNome: '', // Novo campo: Nome do Cliente
-    telefone: '', // Novo campo: Telefone
-    valorEmprestimo: '', // Novo campo: Valor do Empréstimo
+    clienteNome: '', 
+    telefone: '', 
+    valorEmprestimo: '', 
   });
 
   const handleInputChange = (e) => {
