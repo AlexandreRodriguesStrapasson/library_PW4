@@ -2,15 +2,21 @@
   "books": [
     {
       "id": "1",
-      "name": "Senhor dos Anéis",
-      "author": "Tolkien",
-      "dataRetirada": "2023-01-01"
+      "name": "Dracula",
+      "author": "Bran Stolker",
+      "dataRetirada": "2023-06-06",
+      "clienteNome": "Guilherme Rodrigues",
+      "telefone": "16 9845654",
+      "valorEmprestimo": "45"
     },
     {
       "id": "2",
       "name": "Senhor dos Anéis",
       "author": "Tolkien",
-      "dataRetirada": "2023-11-15"
+      "dataRetirada": "2023-11-23",
+      "clienteNome": "Alexandre Rodrigues Strapasson",
+      "telefone": "16981089955",
+      "valorEmprestimo": "50"
     }
   ]
 }
