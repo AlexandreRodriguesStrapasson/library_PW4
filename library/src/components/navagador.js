@@ -15,7 +15,7 @@ function Navegador(){
     return(
         <div id="navegation">
             <button onClick={goToHome}>Home</button>
-            <button onClick={goToFormBook}>Cadastrar Livro</button>
+            <button onClick={goToFormBook}>Cadastrar Emprestimo</button>
             <button onClick={goToBooks}>Livros</button>
         </div>
     )

@@ -48,14 +48,26 @@ const Books = () => {
     }
   };
 
-  const handleEmprestimoClick = (bookId) => {
-    navigate('/Emprestimo', { state: { bookId } });
+  const handleEmprestimoClick = async (bookId) => {
+    try {
+      const response = await fetch(`http://localhost:3500/books/${bookId}`);
+      if (!response.ok) {
+        throw new Error(`Erro ao buscar dados do livro: ${response.statusText}`);
+      }
+  
+      const bookDetails = await response.json();
+      navigate('/Emprestimo', {
+        state: { bookDetails, dataRetirada: bookDetails.dataRetirada },
+      });
+    } catch (error) {
+      console.error('Erro ao obter dados do livro:', error);
+    }
   };
 
   return (
     <div>
       <Navegador />
-      <h2>Lista de Livros</h2>
+      <h2>Lista de livros emprestados</h2>
       <ul>
         {books.map((book) => (
           <li key={book.id}>

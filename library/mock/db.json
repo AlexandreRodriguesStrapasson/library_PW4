@@ -1,14 +1,16 @@
 {
   "books": [
     {
-      "name": "Harry Potter",
-      "author": "J.K. Rowling",
-      "id": "1"
-    },
-    {
+      "id": "1",
       "name": "Senhor dos Anéis",
       "author": "Tolkien",
-      "id": "2"
+      "dataRetirada": "2023-01-01"
+    },
+    {
+      "id": "2",
+      "name": "Senhor dos Anéis",
+      "author": "Tolkien",
+      "dataRetirada": "2023-11-15"
     }
   ]
 }
