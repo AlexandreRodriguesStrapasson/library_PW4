@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import browserStyle from "../style/browser.module.css"
 
 function Browser(){
     const navigate = useNavigate();
@@ -13,10 +14,10 @@ function Browser(){
     }
 
     return(
-        <div id="navegation">
-            <button onClick={goToHome}>Home</button>
-            <button onClick={goToFormBook}>Cadastrar Emprestimo</button>
-            <button onClick={goToBooks}>Livros</button>
+        <div className={browserStyle.backGround} id="navegation">
+            <button className={browserStyle.btn} onClick={goToHome}>Home</button>
+            <button className={browserStyle.btn} onClick={goToFormBook}>Cadastrar Emprestimo</button>
+            <button className={browserStyle.btn} onClick={goToBooks}>Livros</button>
         </div>
     )
 }
