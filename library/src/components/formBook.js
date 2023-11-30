@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Style from '../style/whiteBackGround.module.css';
 
 function FormBook() {
   const [bookData, setBookData] = useState({
@@ -64,6 +65,7 @@ function FormBook() {
         <label>
           ID do Livro
           <input
+            className={Style.inputId}
             type="text"
             name="id"
             value={bookData.id}
@@ -76,6 +78,7 @@ function FormBook() {
         <label>
           Nome do Livro
           <input
+            className={Style.inputName}
             type="text"
             name="name"
             value={bookData.name}
@@ -88,6 +91,7 @@ function FormBook() {
         <label>
           Autor
           <input
+            className={Style.inputAuthor}
             type="text"
             name="author"
             value={bookData.author}
@@ -100,6 +104,7 @@ function FormBook() {
         <label>
           Data de Retirada
           <input
+            className={Style.inputDate}
             type="date"
             name="dataRetirada"
             value={bookData.dataRetirada}
@@ -112,6 +117,7 @@ function FormBook() {
         <label>
           Nome do Cliente
           <input
+            className={Style.inputClient}
             type="text"
             name="clienteNome"
             value={bookData.clienteNome}
@@ -124,6 +130,7 @@ function FormBook() {
         <label>
           Telefone
           <input
+            className={Style.inputPhone}
             type="text"
             name="telefone"
             value={bookData.telefone}
@@ -136,6 +143,7 @@ function FormBook() {
         <label>
           Valor do Empréstimo
           <input
+            className={Style.inputLoan}
             type="text"
             name="valorEmprestimo"
             value={bookData.valorEmprestimo}
@@ -145,7 +153,7 @@ function FormBook() {
 
         <br />
 
-        <button type="submit">Cadastrar</button>
+        <button className={Style.button} type="submit">Cadastrar</button>
       </form>
     </div>
   );
