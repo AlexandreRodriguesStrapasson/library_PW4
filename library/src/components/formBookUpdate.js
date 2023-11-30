@@ -41,7 +41,7 @@ function FormBookUpdate() {
       });
 
       if (response.ok) {
-        console.log('Livro cadastrado/atualizado com sucesso!');
+        console.log('atualizado com sucesso!');
         navigate('/Livros');
       } else {
         console.error('Erro ao cadastrar/atualizar livro.');
