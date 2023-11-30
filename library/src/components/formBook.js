@@ -41,7 +41,6 @@ function FormBook() {
 
       if (response.ok) {
         console.log('Livro cadastrado com sucesso!');
-        console.log('Livro cadastrado com sucesso!');
         setBookData({
           id: '',
           name: '',

@@ -12,11 +12,11 @@
     {
       "id": "2",
       "name": "Senhor dos Anéis",
-      "author": "Tolkien",
-      "dataRetirada": "2023-11-23",
+      "author": "J.R.R Tolkien",
+      "dataRetirada": "2023-01-01",
       "clienteNome": "Alexandre Rodrigues Strapasson",
       "telefone": "16981089955",
-      "valorEmprestimo": "50"
+      "valorEmprestimo": "12"
     }
   ]
 }
