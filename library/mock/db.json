@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Senhor dos Anéis - As duas torres",
       "author": "J.R.R Tolkien",
-      "dataRetirada": "",
+      "dataRetirada": "2023-12-05",
       "clienteNome": "Fulano da Silva",
       "telefone": "1231586153515",
       "valorEmprestimo": "12"
@@ -26,15 +26,6 @@
       "clienteNome": "Outro fulano",
       "telefone": "461515356",
       "valorEmprestimo": "20"
-    },
-    {
-      "id": "4",
-      "name": "Harry Potter - E a Câmara Secreta",
-      "author": "J.K. Rowlling",
-      "dataRetirada": "2023-06-06",
-      "clienteNome": "Outro fulano",
-      "telefone": "65483135",
-      "valorEmprestimo": "10"
     }
   ]
 }

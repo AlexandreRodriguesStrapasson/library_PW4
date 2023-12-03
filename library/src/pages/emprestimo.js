@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';  
 import Browser from "../components/browser";
+import Style from '../style/loanCss.module.css'
 
 function Emprestimo() {
   const location = useLocation();  
@@ -45,50 +46,52 @@ function Emprestimo() {
   return (
     <div>
       <Browser />
-      <h2>Dados do Empréstimo</h2>
-      <p>
-        <strong>Data de Retirada:</strong> {dataRetirada}
-      </p>
-
-      {bookDetails && (
-        <div>
-          <h3>Dados do Cliente</h3>
-          <p>
-            <strong>Cliente:</strong> {bookDetails.clienteNome}
-          </p>
-          <p>
-            <strong>Telefone:</strong> {bookDetails.telefone}
-          </p>
-          <p>
-            <strong>Valor do Empréstimo:</strong> {bookDetails.valorEmprestimo}
-          </p>
-        </div>
-      )}
-
-      <form>
-        <label>
-          Data de devolução
-          <input
-            type="date"
-            value={dataDevolucao}
-            onChange={handleDataDevolucaoChange}
-          />
-        </label>
-
-        <br />
-
-        <button type="button" onClick={calculateAtraso}>
-          Conferir Empréstimo
-        </button>
-      </form>
-
-      {atrasado !== null && (
+      <div className={Style.div}>
+        <h2>Dados do Empréstimo</h2>
         <p>
-          {atrasado
-            ? `O empréstimo está atrasado. Valor com atraso: R$ ${valorComAtraso}`
-            : "O empréstimo está dentro do prazo."}
+          <strong>Data de Retirada:</strong> {dataRetirada}
         </p>
-      )}
+
+        {bookDetails && (
+          <div>
+            <h3>Dados do Cliente</h3>
+            <p>
+              <strong>Cliente:</strong> {bookDetails.clienteNome}
+            </p>
+            <p>
+              <strong>Telefone:</strong> {bookDetails.telefone}
+            </p>
+            <p>
+              <strong>Valor do Empréstimo:</strong> {bookDetails.valorEmprestimo}
+            </p>
+          </div>
+        )}
+
+        <form>
+          <label>
+            Data de devolução
+            <input
+              className={Style.inputDate}
+              type="date"
+              value={dataDevolucao}
+              onChange={handleDataDevolucaoChange}
+            />
+          </label>
+
+          <br />
+
+          <button className={Style.button}type="button" onClick={calculateAtraso}>
+            Conferir Empréstimo
+          </button>
+        </form>      
+        {atrasado !== null && (
+          <p>
+            {atrasado
+              ? `O empréstimo está atrasado. Valor com atraso: R$ ${valorComAtraso}`
+              : "O empréstimo está dentro do prazo."}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
