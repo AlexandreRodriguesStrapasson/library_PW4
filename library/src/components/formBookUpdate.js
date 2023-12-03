@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Style from '../style/backGround.module.css';
 
 function FormBookUpdate() {
   const navigate = useNavigate();
@@ -52,58 +53,93 @@ function FormBookUpdate() {
   };
 
   return (
-    <div>
+    <div className={Style.div}>
       <form onSubmit={handleSubmit}>
         <label>
           ID do Livro
-          <input type="text" name="id" value={bookData.id} onChange={handleInputChange} readOnly />
+          <input 
+          className={Style.inputId}
+          type="text" 
+          name="id" 
+          value={bookData.id} 
+          onChange={handleInputChange} readOnly />
         </label>
 
         <br />
 
         <label>
           Nome do Livro
-          <input type="text" name="name" value={bookData.name} onChange={handleInputChange} />
+          <input 
+          className={Style.inputName}
+          type="text" 
+          name="name" 
+          value={bookData.name} 
+          onChange={handleInputChange} />
         </label>
 
         <br />
 
         <label>
           Autor
-          <input type="text" name="author" value={bookData.author} onChange={handleInputChange} />
+          <input 
+          className={Style.inputAuthor}
+          type="text" 
+          name="author" 
+          value={bookData.author} 
+          onChange={handleInputChange} />
         </label>
 
         <br />
 
         <label>
           Data de Retirada
-          <input type="date" name="dataRetirada" value={bookData.dataRetirada} onChange={handleInputChange} />
+          <input 
+          className={Style.inputDate}
+          type="date" 
+          name="dataRetirada" 
+          value={bookData.dataRetirada} 
+          onChange={handleInputChange} />
         </label>
 
         <br />
 
         <label>
           Nome do Cliente
-          <input type="text" name="clienteNome" value={bookData.clienteNome} onChange={handleInputChange} />
+          <input 
+          className={Style.inputClient}
+          type="text" 
+          name="clienteNome" 
+          value={bookData.clienteNome} 
+          onChange={handleInputChange} />
         </label>
 
         <br />
 
         <label>
           Telefone
-          <input type="text" name="telefone" value={bookData.telefone} onChange={handleInputChange} />
+          <input 
+          className={Style.inputPhone}
+          type="text" 
+          name="telefone" 
+          value={bookData.telefone} 
+          onChange={handleInputChange} />
         </label>
 
         <br />
 
         <label>
           Valor do Empréstimo
-          <input type="text" name="valorEmprestimo" value={bookData.valorEmprestimo} onChange={handleInputChange} />
+          <input 
+          className={Style.inputLoan}
+          type="text" 
+          name="valorEmprestimo" 
+          value={bookData.valorEmprestimo} 
+          onChange={handleInputChange} />
         </label>
 
         <br />
 
-        <button type="submit">Atualizar</button>
+        <button className={Style.button} type="submit">Atualizar</button>
       </form>
     </div>
   );

@@ -1,3 +1,22 @@
 {
-  "books": []
+  "books": [
+    {
+      "id": "1",
+      "name": "Senhor dos Anéis - As duas torres",
+      "author": "J.R.R Tolkien",
+      "dataRetirada": "",
+      "clienteNome": "Fulano da Silva",
+      "telefone": "1231586153515",
+      "valorEmprestimo": "12"
+    },
+    {
+      "id": "2",
+      "name": "Dracula",
+      "author": "Bran Stolker",
+      "dataRetirada": "2002-01-01",
+      "clienteNome": "Um maluco qualquer",
+      "telefone": "2181688166",
+      "valorEmprestimo": "15"
+    }
+  ]
 }

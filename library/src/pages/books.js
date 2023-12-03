@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Browser from '../components/browser';
 import { AiFillEdit, AiFillDelete, AiOutlineFieldTime } from 'react-icons/ai';
+import Style from '../style/backGround.module.css'
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -65,27 +66,29 @@ const Books = () => {
   };
 
   return (
-    <div>
+    <div> 
       <Browser />
+      <div className={Style.div}>
       <h2>Lista de livros emprestados</h2>
-      <ul>
-        {books.map((book) => (
-          <li key={book.id}>
-            <strong>Nome: </strong>
-            {book.name}
-            <br />
-            <strong>Autor: </strong>
-            {book.author}
-            <br />
-            <strong>ID: </strong>
-            {book.id}
-            <br />
-            <AiFillEdit onClick={() => handleEditClick(book.id)} />
-            <AiFillDelete onClick={() => handleDeleteClick(book.id)} />
-            <AiOutlineFieldTime onClick={() => handleEmprestimoClick(book.id)} />
-          </li>
-        ))}
-      </ul>
+        <ul className={Style.ul}>
+            {books.map((book) => (
+              <li key={book.id}>
+                <strong>Nome: </strong>
+                {book.name}
+                <br />
+                <strong>Autor: </strong>
+                {book.author}
+                <br />
+                <strong>ID: </strong>
+                {book.id}
+                <br />
+                <AiFillEdit onClick={() => handleEditClick(book.id)} />
+                <AiFillDelete onClick={() => handleDeleteClick(book.id)} />
+                <AiOutlineFieldTime onClick={() => handleEmprestimoClick(book.id)} />
+              </li>
+            ))}
+          </ul>
+      </div>
     </div>
   );
 };
