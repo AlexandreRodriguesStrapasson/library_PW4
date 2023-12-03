@@ -14,7 +14,8 @@ function Home(){
             <Browser/>
             <div className={Style.div}>
                 <h1>Home Page</h1>
-                <p>Essa página vai ser usada para um apresentação do site</p>
+                <p>Ler fornece ao espírito materiais para o conhecimento, mas só o pensar faz nosso o que lemos</p>
+                <p>~John Locke</p>
                 <h3>Top mais indicados</h3>
                 <ul className={Style.ul}>
                     <li className={Style.li}><img src={img1} alt="Senhor dos aneis - A Sociedade do anel" className={Style.book}/></li>
