@@ -1,4 +1,3 @@
-
 import Browser from '../components/browser';
 import FormBook from '../components/formBook';
 import Style from '../style/backGround.module.css';
@@ -9,7 +8,7 @@ function InputBook() {
       <Browser />
       <div className={Style.div}>
         <FormBook/>
-        </div>
+      </div>
     </div>
   );
 }
