@@ -4,8 +4,8 @@ import Books from "../components/booksHomePage";
 function Home(){
     return(
         <div>
-            <Browser/>
-            <Books/>
+          <Browser/>
+          <Books/>
         </div>
     )
 }
