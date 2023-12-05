@@ -90,6 +90,7 @@
     border-radius: 20px;
     height: 30px;
     width: 400px;
+    margin-bottom: 10px;
 }
 
 .button:hover{
