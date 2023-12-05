@@ -1,5 +1,5 @@
 # bye-poo
-Site that registers books and calculates whether they are late , for didactic purposes
+Site that registers books and calculates the loan , for didactic purposes
 
 # initialing a server to liberary
 on terminal
